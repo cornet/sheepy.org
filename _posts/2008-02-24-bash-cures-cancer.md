@@ -6,16 +6,15 @@ created: 1203896867
 Another site that I've just added to my feed list.
 
 Quite a few things on here I wasn't aware of such as:
-<code>
-find . -name 'file-*' -delete
-</code>
+
+    find . -name 'file-*' -delete
+
 is much faster than
-<code>
-find . -name 'file-*' -exec rm {} \;
-</code>
+
+    find . -name 'file-*' -exec rm {} \;
+
 although I need to test how it compares to:
-<code>
-find . -name 'file-*' | xargs rm
-</code>
+
+    find . -name 'file-*' | xargs rm
 
 <a href="http://bashcurescancer.com/">BASH Cures Cancer</a>

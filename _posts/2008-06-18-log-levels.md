@@ -15,12 +15,13 @@ Yes I like to see what an application is doing but I don't need to know every fu
 
 
 Generally I use 4 different log levels:
+
 <ul>
 <li>DEBUG</li>
 <li>INFO</li>
 <li>WARN</li>
 <li>ERROR</li>
-<ul>
+</ul>
 
 The definitions for these go something as follows:
 <table>

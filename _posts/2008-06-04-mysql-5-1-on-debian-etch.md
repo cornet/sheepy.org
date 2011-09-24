@@ -15,51 +15,44 @@ that (especially considering it wanted to upgrade libc6)
 
 That said it turned out that this package would build fine on Etch by doing the following:
 
-
 Add the following to <em>/etc/apt/sources.list</em>:
-<code>
-deb http://ftp.uk.debian.org/debian/ experimental main contrib non-free
-deb-src http://ftp.uk.debian.org/debian/ experimental main contrib non-free
-</code>
+
+    deb http://ftp.uk.debian.org/debian/ experimental main contrib non-free
+    deb-src http://ftp.uk.debian.org/debian/ experimental main contrib non-free
 
 
 Then create <em>/etc/apt/preferences</em> with the following in:
-<code>
-Package: *
-Pin: release o=Debian,a=stable
-Pin-Priority: 900
-Package: *
-Pin: release o=Debian
-Pin-Priority: -1
-</code>
+
+    Package: *
+    Pin: release o=Debian,a=stable
+    Pin-Priority: 900
+    Package: *
+    Pin: release o=Debian
+    Pin-Priority: -1
+ 
 which basically says "only install stuff from stable".
 
 
 Next we get the dev tools and the build dependencies:
-<code>
-aptitude install dpkg-dev devscripts
-apt-get build-dep mysql-server-5.1
-apt-get source mysql-server-5.1
-</code>
 
+    aptitude install dpkg-dev devscripts
+    apt-get build-dep mysql-server-5.1
+    apt-get source mysql-server-5.1
 
 Then build the .debs:
-<code>
-cd mysql-dfsg-5.1-5.1.24rc
-debuild 
-</code>
+
+    cd mysql-dfsg-5.1-5.1.24rc
+    debuild 
 
 
 Once that has finished get the run time deps:
-<code>
-aptitude install libdbd-mysql-perl libdbi-perl
-</code>
+
+    aptitude install libdbd-mysql-perl libdbi-perl
 
 
 And finally install the .debs we created earlier:
-<code>
-cd ..
-dpkg -i *.deb
-</code>
+
+    cd ..
+    dpkg -i *.deb
 
 ...and there you go, MySQL 5.1 on Debian Etch :)
