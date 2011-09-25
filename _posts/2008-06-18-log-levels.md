@@ -24,6 +24,7 @@ Generally I use 4 different log levels:
 </ul>
 
 The definitions for these go something as follows:
+
 <table>
 <tr>
 <td><b>DEBUG</b></td>
@@ -33,6 +34,7 @@ The definitions for these go something as follows:
 <td><b>INFO</b></td>
 <td>Things that should happen that give you just enough idea about what's going on. This should be limited to 1 or 2 lines per transaction,</td>
 </tr>
+<tr>
 <td><b>WARN</b></td>
 <td>Things that shouldn't happen but the end user should see no difference. For example $foo failed so falling back to $bar instead</td>
 </tr>
