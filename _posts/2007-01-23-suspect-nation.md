@@ -3,7 +3,7 @@ layout: post
 title: Suspect Nation
 created: 1169593302
 ---
-<a href="http://youtube.com/watch?v=Qo0a23YDXLM">[Watch on youtube]</a>
+[Watch on youtube](http://youtube.com/watch?v=Qo0a23YDXLM)
 
 Well worth watching if you are at all interested in security.
 

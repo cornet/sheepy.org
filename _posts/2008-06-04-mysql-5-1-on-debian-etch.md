@@ -9,7 +9,7 @@ in anything from testing or unstable.
 Now there are a number of different ways you could do this but I wanted a debian
 package (as I have banned installing anything from source on new servers at work).
 
-After some google action I found that <a href="http://tretkowski.de/blog/">Norbert Tretkowski</a> had submitted packages to <a href="http://packages.debian.org/experimental/misc/mysql-server">experimental</a>
+After some google action I found that [Norbert Tretkowski](http://tretkowski.de/blog/) had submitted packages to [experimental](http://packages.debian.org/experimental/misc/mysql-server)
 However after checking these out they wanted to pull things in from testing and/or unstable and I didn't want
 that (especially considering it wanted to upgrade libc6)
 

@@ -5,4 +5,4 @@ created: 1169659058
 ---
 I'm not convinced on some of the coding style but definitly looks useful.
 
-<a href="http://freeos.com/guides/lsst/">http://freeos.com/guides/lsst/</a>
+[http://freeos.com/guides/lsst/](http://freeos.com/guides/lsst/)

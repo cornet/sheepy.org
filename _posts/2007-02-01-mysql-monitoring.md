@@ -12,7 +12,7 @@ Here are some tools to help monitor MySQL so you don't get any nasty surprises:
 		The MySQL Graph Collection for cacti
 	</a>
 </h3>
-<a href="http://www.cacti.net">Cacti</a> is a great tool for monitoring, giving you pretty
+[Cacti](http://www.cacti.net) is a great tool for monitoring, giving you pretty
 graphs allowing you to easily spot sudden and long term trends.
 
 It takes some setting up but well worth it.
@@ -21,31 +21,31 @@ I do not currently know how much extra load this will put on a database but I do
 it to be much. Expect and updated post once I've done some testing.
 
 <h3>
-	<a href="http://jeremy.zawodny.com/mysql/mytop/">mytop</a>
+	[mytop](http://jeremy.zawodny.com/mysql/mytop/)
 </h3>
 
-mytop is a console based monitoring tool by <a href="http://jeremy.zawodny.com/">Jeremy Zawodny</a>
-who helps look after <a href="http://www.yahoo.com/">Yahoo's</a> MySQL databases.
+mytop is a console based monitoring tool by [Jeremy Zawodny](http://jeremy.zawodny.com/)
+who helps look after [Yahoo's](http://www.yahoo.com/) MySQL databases.
 
 It is basically a clone of <em>top</em> for MySQL and is useful for seeing, in real time, what is
 happening on you MySQL server.
 
 <h3>
-	<a href="http://www.xaprb.com/blog/2006/07/02/innotop-mysql-innodb-monitor/">innotop</a>
+	[innotop](http://www.xaprb.com/blog/2006/07/02/innotop-mysql-innodb-monitor/)
 </h3>
 
 innotop is much like mytop with but specifically for InnoDB tablespace. It can show loads of things
 such as 
-<a href="http://www.xaprb.com/innotop/innotop-screenshot-T-mode.png">transactions</a>,
-<a href="http://www.xaprb.com/innotop/innotop-screenshot-D-mode.png">deadlocks</a> and
-<a href="http://www.xaprb.com/innotop/innotop-screenshot-V-mode.png">statistics</a>
+[transactions](http://www.xaprb.com/innotop/innotop-screenshot-T-mode.png),
+[deadlocks](http://www.xaprb.com/innotop/innotop-screenshot-D-mode.png) and
+[statistics](http://www.xaprb.com/innotop/innotop-screenshot-V-mode.png)
 
 <h3>
-	<a href="http://hackmysql.com/mysqlreport">MySQL Report</a>
+	[MySQL Report](http://hackmysql.com/mysqlreport)
 </h3>
 
 This tool does nothing other than take the output of SHOW STATUS and puts it into a more readable form.
-The main thing is not necessarly the tool itself but the <a href="http://hackmysql.com/mysqlreportguide">documentation</a>
+The main thing is not necessarly the tool itself but the [documentation](http://hackmysql.com/mysqlreportguide)
 that goes through a sample report and explains it line by line.
 
 This tool is extreamely use for for quickly diagnosing problems related to high load on a database.

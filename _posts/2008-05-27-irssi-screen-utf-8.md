@@ -9,4 +9,4 @@ I'd managed to get things sorted so that I could input pound signs and they woul
 
 I *think* what was happening was that it was taking UTF-8 input and converting it to latin1... not entirely sure.
 
-Anyway for those suffering the same issues take a look at <a href="http://www.iovene.com/the-ultimate-guide-for-utf-8-in-irssi-and-gnuscreen/">The ultimate guide for UTF-8 in irssi and GNU/Screen</a>
+Anyway for those suffering the same issues take a look at [The ultimate guide for UTF-8 in irssi and GNU/Screen](http://www.iovene.com/the-ultimate-guide-for-utf-8-in-irssi-and-gnuscreen/)

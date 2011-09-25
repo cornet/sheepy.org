@@ -16,7 +16,7 @@ This has apparently been confirmed on the following phones:
 
 No doubt many other phones are effected.
 
-Attached is the current release of the <a href="http://www.xmailserver.org/ussp-push.html">ussp-push</a> program which uses the <a href="http://www.bluez.org/">Bluez</a> bluetooth stack to do a Obex push.
+Attached is the current release of the [ussp-push](http://www.xmailserver.org/ussp-push.html) program which uses the [Bluez](http://www.bluez.org/) bluetooth stack to do a Obex push.
 
 All that is required is a wrapper script of the form:
 <pre>

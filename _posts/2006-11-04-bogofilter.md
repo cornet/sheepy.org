@@ -7,6 +7,6 @@ I, and other people on my server, are having SPAM issues again. Spamassassin is 
 
 After some hunting I think I have found a solution:
 <blockquote>Bogofilter              is a mail filter that classifies mail as spam or ham (non-spam)              by a statistical analysis of the message's header and content (body).              The program is able to learn from the user's classifications and              corrections.
-<a href="http://bogofilter.sourceforge.net/">Bogofilter Home Page</a></blockquote>
+[Bogofilter Home Page](http://bogofilter.sourceforge.net/)</blockquote>
 
 Happy SPAM munching.

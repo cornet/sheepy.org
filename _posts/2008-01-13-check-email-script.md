@@ -3,9 +3,9 @@ layout: post
 title: Check Email Script
 created: 1200189871
 ---
-So I've been playing with <a href="http://conky.sf.net/">conky</a> again and wanted it to check all my email accounts for new mail.
+So I've been playing with [conky](http://conky.sf.net/) again and wanted it to check all my email accounts for new mail.
 
-I found <a href="http://gentoo-wiki.com/TIP_conky#IMAP_Email_Checking_Script">this</a> script but I wanted to check multiple accounts and show the total mail count in my inbox.
+I found [this](http://gentoo-wiki.com/TIP_conky#IMAP_Email_Checking_Script) script but I wanted to check multiple accounts and show the total mail count in my inbox.
 
 After some hacking here is what I came up with... and yes I've removed the base64 encoding as it doesn't add any security what so ever!
 

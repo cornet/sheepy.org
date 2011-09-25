@@ -14,7 +14,7 @@ Email received today from someone using BPOS:
       mail187-tx2-R.bigfish.com (Postfix) with ESMTP id 520131100037  for
       <******@*******.***>; Wed, 10 Jun 2009 10:33:02 +0000 (UTC)
 
-Looks like bigfish.com are using the <a href="http://www.postfix.org/">Postfix</a> mail server.
+Looks like bigfish.com are using the [Postfix](http://www.postfix.org/) mail server.
 
 Quick whois on bigfish.com reveals:
 

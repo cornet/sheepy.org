@@ -107,5 +107,5 @@ Also I've yet to test with other versions.
 <h4>Update</h4>
 Looks like this is a bug that was fixed in 5-1-31
 
-<a href="http://bugs.mysql.com/bug.php?id=41841">http://bugs.mysql.com/bug.php?id=41841</a>
-<a href="http://bugs.mysql.com/bug.php?id=36411">http://bugs.mysql.com/bug.php?id=36411</a>
+[http://bugs.mysql.com/bug.php?id=41841](http://bugs.mysql.com/bug.php?id=41841)
+[http://bugs.mysql.com/bug.php?id=36411](http://bugs.mysql.com/bug.php?id=36411)

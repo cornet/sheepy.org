@@ -8,7 +8,7 @@ There are a number of tools sysadmins should be looking at in order to make thei
 Some tools that I have found so far are:
 
 <ul>
-<li><a href="http://www.cfengine.org/">cfengine</a></li>
-<li><a href="http://reductivelabs.com/projects/puppet/">Puppet</a></li>
-<li><a href="http://trac.mcs.anl.gov/projects/bcfg2">Bcfg2</a></li>
+<li>[cfengine](http://www.cfengine.org/)</li>
+<li>[Puppet](http://reductivelabs.com/projects/puppet/)</li>
+<li>[Bcfg2](http://trac.mcs.anl.gov/projects/bcfg2)</li>
 </ul>

@@ -17,4 +17,4 @@ although I need to test how it compares to:
 
     find . -name 'file-*' | xargs rm
 
-<a href="http://bashcurescancer.com/">BASH Cures Cancer</a>
+[BASH Cures Cancer](http://bashcurescancer.com/)

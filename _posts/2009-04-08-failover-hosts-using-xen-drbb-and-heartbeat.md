@@ -30,17 +30,17 @@ Click the "Read More" button for full details on the setup.
 <h3>Installing DRBD</h3>
 <em>To be done on both Xen nodes</em>
 
-DRBD is only at version 7 in Debian Etch, so we pull in version 8 from <a href="http://www.backports.org">backports.org</a>
+DRBD is only at version 7 in Debian Etch, so we pull in version 8 from [backports.org](http://www.backports.org)
 
 Version 8 comes with some helper scripts for Xen which make the failover a lot easier to configure.
 
 These are the packages we need:
 <ul>
-  <li><a href="http://packages.debian.org/etch-backports/drbd8-utils">drbd8-utils</a></li>
-  <li><a href="http://packages.debian.org/etch-backports/drbd8-source">drbd8-source</a></li>
+  <li>[drbd8-utils](http://packages.debian.org/etch-backports/drbd8-utils)</li>
+  <li>[drbd8-source](http://packages.debian.org/etch-backports/drbd8-source)</li>
 </ul>
 
-If you are unsure on how to install stuff from backports then please read the documentation located <a href="http://backports.org/dokuwiki/doku.php?id=instructions">here</a>
+If you are unsure on how to install stuff from backports then please read the documentation located [here](http://backports.org/dokuwiki/doku.php?id=instructions)
 
 After installing the packages we need to build the DRBD kernel module. The easiest way to achieve this is to do:
 <pre>module-assistant auto-install drbd8</pre>
@@ -357,7 +357,7 @@ We need to create 3 XML files:
 Now the documentation for these XML files is somewhat thin on the ground. The only real thing to go on is the DTD
 which, on Debian, lives here:<em>/usr/lib/heartbeat/crm.dtd</em>
 
-You can also refer to the online version <a href="http://hg.clusterlabs.org/pacemaker/dev/file/tip/xml/crm-1.0.dtd">here</a> which
+You can also refer to the online version [here](http://hg.clusterlabs.org/pacemaker/dev/file/tip/xml/crm-1.0.dtd) which
 is always the latest version.
 
 
@@ -485,4 +485,4 @@ crm_resource --resource host2 --set-parameter target_role \
 </pre>
 
 <h3>Credits</h3>
-Thanks to <a href="http://www.netdotnet.net/">Doug</a> for pointing out all my lame mistakes.
+Thanks to [Doug](http://www.netdotnet.net/) for pointing out all my lame mistakes.

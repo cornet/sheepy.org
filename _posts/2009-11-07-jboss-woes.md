@@ -9,7 +9,7 @@ However every so often JBoss plays up and the symptoms presented seem to point t
 
 It's release day and shiny new software is just itching to be deployed. The sysadmin gets up early and rocks up to the office to go through the standard deployment procedure. If only things always went to plan!
 
-We have a cluster of a number of servers and use the <a href="http://www.jboss.org/community/wiki/JBossFarmDeployment">JBoss Farm Deployment</a> service to deploy applications. It's fairly straight forward, you build and deploy .ear, .war, .spring, etc... files to the <em>$JBOSS_HOME/server/default/farm/</em> directory and all the nodes pick up the new code.
+We have a cluster of a number of servers and use the [JBoss Farm Deployment](http://www.jboss.org/community/wiki/JBossFarmDeployment) service to deploy applications. It's fairly straight forward, you build and deploy .ear, .war, .spring, etc... files to the <em>$JBOSS_HOME/server/default/farm/</em> directory and all the nodes pick up the new code.
 
 Here comes the first gotcha, which we have known about for quite a while now. If you re-farm an already running package then by default it won't free itself from the PermGen heap so continuous redeploying will eventually mean you run out of PermGen memory.
 
