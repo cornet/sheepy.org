@@ -215,11 +215,11 @@ Now that we have done that we can start up drbd:
 
 Right now all that is set up we now need to select one node as the primary, (say xen1).
 
-<em>On xen1 only</em> we now do the following which does 2 things:
-<ol>
-<li>Sets xen1 as the primary for the DRBD devices</li>
-<li>Syncs all the data from xen1 to xen2</li>
-</ol>
+*On xen1 only</em> we now do the following which does 2 things:*
+
+* Sets xen1 as the primary for the DRBD devices
+* Syncs all the data from xen1 to xen2
+
 <pre>
 drbdadm -- --overwrite-data-of-peer primary host1_root
 drbdadm -- --overwrite-data-of-peer primary host1_swap
@@ -287,57 +287,58 @@ Then unmount <em>/mnt/host1</em> &amp; <em>/mnt/host2</em> and we are ready to c
 <em>To be done on both Xen nodes</em>
 
 Create <em>/etc/xen/host1.dom</em> with the following contents:
-<pre>
-#  -*- mode: python; -*-
-#----------------------------------------------------------------------------
-# Kernel image file.
-kernel = "/boot/vmlinuz-2.6.18-6-xen-686"
-ramdisk = "/boot/initrd.img-2.6.18-6-xen-686"
 
-# Initial memory allocation (in megabytes) for the new domain.
-memory = 1024
+    #  -*- mode: python; -*-
+    #----------------------------------------------------------------------------
+    # Kernel image file.
+    kernel = "/boot/vmlinuz-2.6.18-6-xen-686"
+    ramdisk = "/boot/initrd.img-2.6.18-6-xen-686"
+    
+    # Initial memory allocation (in megabytes) for the new domain.
+    memory = 1024
+    
+    # A name for your domain. All domains must have different names.
+    name = "host1"
+    
+    # Filesystems
+    disk = [ 'drbd:host1_root,xvda,w', 'drbd:host1_swap,xvdb,w']
+    
+    # Network
+    vif = ['bridge=xenbr0']
+    
+    # Set root device.
+    root = "/dev/xvda ro"
+    
+    # Sets runlevel 4.
+    extra = "4"
 
-# A name for your domain. All domains must have different names.
-name = "host1"
+and 
 
-# Filesystems
-disk = [ 'drbd:host1_root,xvda,w', 'drbd:host1_swap,xvdb,w']
+<em>/etc/xen/host2.dom</em> 
 
-# Network
-vif = ['bridge=xenbr0']
-
-# Set root device.
-root = "/dev/xvda ro"
-
-# Sets runlevel 4.
-extra = "4"
-</pre>
-and <em>/etc/xen/host2.dom</em> 
-<pre>
-#  -*- mode: python; -*-
-#----------------------------------------------------------------------------
-# Kernel image file.
-kernel = "/boot/vmlinuz-2.6.18-6-xen-686"
-ramdisk = "/boot/initrd.img-2.6.18-6-xen-686"
-
-# Initial memory allocation (in megabytes) for the new domain.
-memory = 1024
-
-# A name for your domain. All domains must have different names.
-name = "host2"
-
-# Filesystems
-disk = [ 'drbd:host2_root,xvda,w', 'drbd:host2_swap,xvdb,w']
-
-# Network
-vif = ['bridge=xenbr0']
-
-# Set root device.
-root = "/dev/xvda ro"
-
-# Sets runlevel 4.
-extra = "4"
-</pre>
+    #  -*- mode: python; -*-
+    #----------------------------------------------------------------------------
+    # Kernel image file.
+    kernel = "/boot/vmlinuz-2.6.18-6-xen-686"
+    ramdisk = "/boot/initrd.img-2.6.18-6-xen-686"
+    
+    # Initial memory allocation (in megabytes) for the new domain.
+    memory = 1024
+    
+    # A name for your domain. All domains must have different names.
+    name = "host2"
+    
+    # Filesystems
+    disk = [ 'drbd:host2_root,xvda,w', 'drbd:host2_swap,xvdb,w']
+    
+    # Network
+    vif = ['bridge=xenbr0']
+    
+    # Set root device.
+    root = "/dev/xvda ro"
+    
+    # Sets runlevel 4.
+    extra = "4"
 
 Now on ONE of the nodes ONLY you can start the xen instances by doing:
 <pre>
