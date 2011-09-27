@@ -30,8 +30,6 @@ It appears the poor little Arduino couldn't cope and was missing/corrupting the 
 All in all a productive weekend and hopefully I should have some graphs soon to show what sort of power I'm consuming.
 
 Current TODO list:
-<ul>
-<li>Tidy up the code</li>
-<li>Write agent to connect to the Arduino and get current usage</li>
-<li>Stick this into my [munin](http://munin-monitoring.org/) install [here](https://secure.sheepy.org/munin)</li>
-</ul>
+* Tidy up the code
+* Write agent to connect to the Arduino and get current usage
+* Stick this into my [munin](http://munin-monitoring.org/) install [here](https://secure.sheepy.org/munin)

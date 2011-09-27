@@ -1,3 +1,4 @@
 pygments: true
 paginate: 20
-lsi: false
+lsi: true
+permalink: pretty
