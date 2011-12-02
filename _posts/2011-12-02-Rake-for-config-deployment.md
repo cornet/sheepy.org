@@ -35,74 +35,74 @@ To avoid creating loads of SSH connections I've employed the [Net::SSH::Multi](h
     local_dir  = "zones/"
     
     def remote
-    	@remote ||= begin
-    					require 'net/ssh/multi'
-    					session = Net::SSH::Multi.start
-    					session.use "#{$ssh_user}@#{$ssh_host}"
-    					session
-    				end
+      @remote ||= begin
+        require 'net/ssh/multi'
+        session = Net::SSH::Multi.start
+        session.use "#{$ssh_user}@#{$ssh_host}"
+        session
+      end
     end
     
     
     desc "Get config from #{$ssh_host}"
     task :get do
-    	puts "*** Getting config from #{$ssh_host} ***"
-    	system "#{rsync} #{remote_dir} #{local_dir}"
+      puts "*** Getting config from #{$ssh_host} ***"
+      system "#{rsync} #{remote_dir} #{local_dir}"
     end
     
     desc "Put config to #{$ssh_host}"
     task :put do
-    	puts "*** Deploying config files to #{$ssh_host} ***"
-    	system "#{rsync} #{local_dir} #{remote_dir}"
+      puts "*** Deploying config files to #{$ssh_host} ***"
+      system "#{rsync} #{local_dir} #{remote_dir}"
     end
     
     desc "Test config on #{$ssh_host}"
     task :test do
-    	puts "*** Testing zone files ***"
+      puts "*** Testing zone files ***"
     
-    	errors = Array.new 
+      errors = Array.new 
     
-    	FileList.new("zones/*").each do |zone|
-    		output = Array.new
-    		channel = remote.exec("sudo named-checkzone #{zone.sub(/zones\/db./, '')} #{remote_root}/#{zone}") do |ch, stream, data|
-    			output << "[#{ch[:host]} : #{stream}] #{data}"
-    		end
+      FileList.new("zones/*").each do |zone|
+        output = Array.new
+        channel = remote.exec("sudo named-checkzone #{zone.sub(/zones\/db./, '')} #{remote_root}/#{zone}") do |ch, stream, data|
+          output << "[#{ch[:host]} : #{stream}] #{data}"
+        end
     
-    		channel.wait
+        channel.wait
     
-    		if channel.any? { |c| c[:exit_status] != 0 }
-    			errors << "#{zone} failed to validate"
-    			errors << output.join
-    		end
+        if channel.any? { |c| c[:exit_status] != 0 }
+          errors << "#{zone} failed to validate"
+          errors << output.join
+        end
     
-    	end
+      end
     
-    	unless errors.empty?
-    		abort "#{errors.join("\n")}"
-    	end
+      unless errors.empty?
+        abort "#{errors.join("\n")}"
+      end
     end
     
     desc "Set correct permissions"
     task :set_perms do
-    	puts "*** Setting correct file permissions ***"
-    	remote.exec("sudo chmod 640 /etc/bind/zones/db.*").wait
-    	remote.exec("sudo chown bind:bind /etc/bind/zones/db.*").wait
+      puts "*** Setting correct file permissions ***"
+      remote.exec("sudo chmod 640 /etc/bind/zones/db.*").wait
+      remote.exec("sudo chown bind:bind /etc/bind/zones/db.*").wait
     end
     
     desc "Reload bind on #{$ssh_host}"
     task :reload do
-    	puts "*** Reloading Bind ***"
+      puts "*** Reloading Bind ***"
     
-    	channel = remote.exec("sudo rndc reload") do |ch, stream, data|
-    		puts "[#{ch[:host]} : #{stream}] #{data}"
-    	end
+      channel = remote.exec("sudo rndc reload") do |ch, stream, data|
+        puts "[#{ch[:host]} : #{stream}] #{data}"
+      end
     
-    	channel.wait
+      channel.wait
     end
     
     desc "Put config, test and reload"
     task :deploy => [:put, :set_perms, :test, :reload] do
-    	puts "*** Zonefiles deployed ***"
+      puts "*** Zonefiles deployed ***"
     end
 
 Yes it's hacky and could do with some improvement but then I'm a sysadmin and not a developer. I might have a go at writting a gem to make these sort of Rakefiles cleaner but it's not too bad.
