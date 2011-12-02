@@ -25,8 +25,8 @@ To avoid creating loads of SSH connections I've employed the [Net::SSH::Multi](h
     #
     # Configuration
     #
-    $ssh_user = "nathan"
-    $ssh_host = "baa.sheepy.org"
+    $ssh_user = "foo"
+    $ssh_host = "example.com"
     remote_root = "/etc/bind"
     
     
