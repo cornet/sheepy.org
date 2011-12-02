@@ -29,7 +29,6 @@ $ssh_user = "foo"
 $ssh_host = "example.com"
 remote_root = "/etc/bind"
 
-
 rsync = 'rsync -a -e "ssh" --rsync-path="sudo rsync"'
 remote_dir = "#{$ssh_user}@#{$ssh_host}:#{remote_root}/zones/"
 local_dir  = "zones/"
@@ -43,7 +42,6 @@ def remote
   end
 end
 
-
 desc "Get config from #{$ssh_host}"
 task :get do
   puts "*** Getting config from #{$ssh_host} ***"
@@ -54,6 +52,13 @@ desc "Put config to #{$ssh_host}"
 task :put do
   puts "*** Deploying config files to #{$ssh_host} ***"
   system "#{rsync} #{local_dir} #{remote_dir}"
+end
+
+desc "Set correct permissions"
+task :set_perms do
+  puts "*** Setting correct file permissions ***"
+  remote.exec("sudo chmod 640 /etc/bind/zones/db.*").wait
+  remote.exec("sudo chown bind:bind /etc/bind/zones/db.*").wait
 end
 
 desc "Test config on #{$ssh_host}"
@@ -80,13 +85,6 @@ task :test do
   unless errors.empty?
     abort "#{errors.join("\n")}"
   end
-end
-
-desc "Set correct permissions"
-task :set_perms do
-  puts "*** Setting correct file permissions ***"
-  remote.exec("sudo chmod 640 /etc/bind/zones/db.*").wait
-  remote.exec("sudo chown bind:bind /etc/bind/zones/db.*").wait
 end
 
 desc "Reload bind on #{$ssh_host}"
