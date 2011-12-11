@@ -4,7 +4,7 @@ title: Munin and Graphite, using bunny this time.
 ---
 
 After reading [this](http://www.devco.net/archives/2011/12/11/common-messaging-patterns-using-stomp-%E2%80%93-part-2.php) post by [@ripienaar](https://twitter.com/#!/ripienaar)
-I decided it re-visit my munin-graphite setup to make it somewhat more elegant.
+I decided I would re-visit my munin-graphite setup to make it somewhat more elegant.
 
 While the article advocates the use of stop I would prefer to stick with Graphite's built in AMQP support if possible but I agree that the amqp gem is far from elegant.
 Not what you want if you're a sysadmin needing to solve a problem quickly.
